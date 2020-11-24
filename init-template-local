@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Remove Template Git Repo's git directory"
+rm -rf .git
+
+echo "Initialize npm project"
+npm init
+
+echo "Remove Init Template script"
+exec rm -f ./init-template-local
