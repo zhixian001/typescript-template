@@ -4,7 +4,18 @@ echo "Remove Template Git Repo's git directory"
 rm -rf .git
 
 echo "Initialize npm project"
-npm init
+npm init -y
+
+echo "Initialize yarn"
+YARN=$(which yarn)
+if [ -z "$YARN" ]; then
+    echo "yarn not exist"
+else
+    $YARN
+fi
+
+echo "Initialize git repo"
+git init
 
 echo "Remove Init Template script"
 exec rm -f ./init-template-local
