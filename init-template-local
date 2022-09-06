@@ -10,8 +10,11 @@ echo "Initialize yarn"
 YARN=$(which yarn)
 if [ -z "$YARN" ]; then
     echo "yarn not exist"
+    rm -f package.json
+    exit 1
 else
     $YARN
+    $YARN add -D typescript ts-node @types/node prettier
 fi
 
 echo "Initialize git repo"
