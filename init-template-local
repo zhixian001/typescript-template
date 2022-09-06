@@ -20,5 +20,8 @@ fi
 echo "Initialize git repo"
 git init
 
+echo "Update readme"
+echo "# $(basename $PWD)" > README.md
+
 echo "Remove Init Template script"
 exec rm -f ./init-template-local
