@@ -24,7 +24,7 @@ else
         mkdir -p ./src/entities
         touch ./src/entities/
         echo 'aW1wb3J0IHsKICBFbnRpdHksCiAgUHJpbWFyeUdlbmVyYXRlZENvbHVtbiwKICBDb2x1bW4sCiAgQ3JlYXRlRGF0ZUNvbHVtbiwKICBVcGRhdGVEYXRlQ29sdW1uLAp9IGZyb20gJ3R5cGVvcm0nOwoKQEVudGl0eSgpCmV4cG9ydCBjbGFzcyBVc2VyIHsKICBAUHJpbWFyeUdlbmVyYXRlZENvbHVtbih7IHR5cGU6ICdpbnRlZ2VyJyB9KQogIGlkOiBudW1iZXI7CgogIEBDb2x1bW4oeyB0eXBlOiAndGV4dCcgfSkKICBuYW1lOiBzdHJpbmc7CgogIEBDcmVhdGVEYXRlQ29sdW1uKCkKICBjcmVhdGVkQXQ6IERhdGU7CgogIEBVcGRhdGVEYXRlQ29sdW1uKCkKICB1cGRhdGVkQXQ6IERhdGU7Cn0K' | base64 -d > ./src/entities/User.ts
-        echo 'ZXhwb3J0ICogZnJvbSAnLi9Vc2VyLnRzJzsK' | base64 -d > ./src/entities/index.ts
+        echo 'ZXhwb3J0ICogZnJvbSAnLi9Vc2VyJzsK' | base64 -d > ./src/entities/index.ts
         echo 'aW1wb3J0IHsgRGF0YVNvdXJjZSB9IGZyb20gJ3R5cGVvcm0nOwppbXBvcnQgeyBVc2VyIH0gZnJvbSAnLi9lbnRpdGllcyc7CgpleHBvcnQgY29uc3QgU3FsaXRlRGF0YVNvdXJjZSA9IG5ldyBEYXRhU291cmNlKHsKICB0eXBlOiAnc3FsaXRlJywKICBkYXRhYmFzZTogJy4vdGVtcGxhdGUtZGF0YWJhc2UuZGInLAogIGVudGl0aWVzOiBbVXNlcl0sCiAgc3luY2hyb25pemU6IHRydWUsCiAgbG9nZ2luZzogdHJ1ZSwKICBzdWJzY3JpYmVyczogW10sCiAgbWlncmF0aW9uczogW10sCn0pOwo=' | base64 -d > ./src/data-source.ts
         echo 'aW1wb3J0IHsgU3FsaXRlRGF0YVNvdXJjZSB9IGZyb20gJy4vZGF0YS1zb3VyY2UnOwppbXBvcnQgeyBVc2VyIH0gZnJvbSAnLi9lbnRpdGllcyc7CgooYXN5bmMgKCkgPT4gewogIGF3YWl0IFNxbGl0ZURhdGFTb3VyY2UuaW5pdGlhbGl6ZSgpOwoKICBjb25zdCB1c2VyUmVwb3NpdG9yeSA9IFNxbGl0ZURhdGFTb3VyY2UuZ2V0UmVwb3NpdG9yeShVc2VyKTsKfSkoKTsK' | base64 -d >> ./src/index.ts
     fi
