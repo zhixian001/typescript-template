@@ -6,21 +6,21 @@ rm -rf .git
 echo "Initialize npm project"
 npm init -y
 
-echo "Initialize yarn"
-YARN=$(which yarn)
+echo "Initialize pnpm"
+PNPM=$(which pnpm)
 NPX=$(which npx)
-if [ -z "$YARN" ]; then
-    echo "yarn not exist"
+if [ -z "$PNPM" ]; then
+    echo "pnpm not exist"
     rm -f package.json
     exit 1
 else
-    $YARN
-    $YARN add -D typescript ts-node @types/node prettier
+    $PNPM
+    $PNPM add -D typescript ts-node @types/node prettier
 
     # TypeORM (with SQLite3 setup)
     if [ "$1" = "typeorm" ] || [ "$2" = "typeorm" ]; then
         echo "Initialize with TypeORM (sqlite3)"
-        $YARN add reflect-metadata typeorm sqlite3
+        $PNPM add reflect-metadata typeorm sqlite3
         mkdir -p ./src/entities
         touch ./src/entities/
         echo 'aW1wb3J0IHsKICBFbnRpdHksCiAgUHJpbWFyeUdlbmVyYXRlZENvbHVtbiwKICBDb2x1bW4sCiAgQ3JlYXRlRGF0ZUNvbHVtbiwKICBVcGRhdGVEYXRlQ29sdW1uLAp9IGZyb20gJ3R5cGVvcm0nOwoKQEVudGl0eSgpCmV4cG9ydCBjbGFzcyBVc2VyIHsKICBAUHJpbWFyeUdlbmVyYXRlZENvbHVtbih7IHR5cGU6ICdpbnRlZ2VyJyB9KQogIGlkOiBudW1iZXI7CgogIEBDb2x1bW4oeyB0eXBlOiAndGV4dCcgfSkKICBuYW1lOiBzdHJpbmc7CgogIEBDcmVhdGVEYXRlQ29sdW1uKCkKICBjcmVhdGVkQXQ6IERhdGU7CgogIEBVcGRhdGVEYXRlQ29sdW1uKCkKICB1cGRhdGVkQXQ6IERhdGU7Cn0K' | base64 -d > ./src/entities/User.ts
@@ -32,7 +32,7 @@ else
     # Jest
     if [ "$1" = "jest" ] || [ "$2" = "jest" ]; then
         echo "Initialize with Jest (ts-jest)"
-        $YARN add -D jest @types/jest ts-jest
+        $PNPM add -D jest @types/jest ts-jest
         $NPX ts-jest config:init
     fi
 
